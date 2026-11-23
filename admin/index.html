@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Bookings · Admin</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script type="module" src="/src/admin.ts"></script>
+  </head>
+  <body>
+    <header class="wrap topbar">
+      <a class="wordmark" href="/">Shhhh.</a>
+      <span class="label label--quiet">Host desk</span>
+    </header>
+    <main class="wrap">
+      <div class="admin-head">
+        <div>
+          <p class="label">Admin</p>
+          <h1>Bookings</h1>
+        </div>
+        <div class="admin-actions"><a class="btn btn--ghost" href="/admin/api/bookings.csv" download>Export CSV</a><a class="btn btn--ghost" href="/admin/api/backup.db" download>Download database</a></div>
+      </div>
+      <dl class="stats" id="stats"></dl>
+      <p class="notice" id="status" role="status"></p>
+      <div class="table-scroll">
+        <table class="bookings">
+          <thead>
+            <tr><th>Seat</th><th>Guest</th><th>Contact</th><th>Vote</th><th>Experience</th><th>Bringing / notes</th><th>Booked</th><th>Email</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="rows"><tr><td colspan="9" class="empty">Loading bookings…</td></tr></tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
